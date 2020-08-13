@@ -116,6 +116,7 @@ func TestProvider_UserGroups(t *testing.T) {
 		WithServiceAccount(&ServiceAccount{APIKey: "APITOKEN"}),
 		WithProviderURL(mustParseURL(srv.URL)),
 	)
+
 	groups, users, err := p.UserGroups(context.Background())
 	assert.NoError(t, err)
 	assert.Equal(t, []*directory.User{
